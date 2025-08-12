@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Bot</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      overflow: hidden;
+      font-family: 'Open Sans', sans-serif;
+    }
+    #myLandbot {
+      width: 100vw;
+      height: 100vh;
+    }
+    /* Optional exit button */
+    #exitBtn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 9999;
+      background: #4A90E2;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+    #exitBtn:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="exitBtn" onclick="location.href='index.html'">Exit Chat</button>
+
+  <div id="myLandbot"></div>
+
+  <script SameSite="None; Secure" type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+  <script type="module">
+    var myLandbot = new Landbot.Container({
+      container: '#myLandbot',
+      configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3088981-EA5LGM60Q83R1WP6/index.json',
+    });
+  </script>
+</body>
+</html>
