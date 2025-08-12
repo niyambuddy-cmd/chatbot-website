@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chat Bot</title>
   <style>
+    /* Body & html setup with flex centering */
     html, body {
       margin: 0; 
       padding: 0; 
@@ -16,6 +17,8 @@
       font-family: 'Open Sans', sans-serif;
       overflow: hidden;
     }
+
+    /* Bot container styling */
     #myLandbot {
       width: 100vw;
       height: 80vh;
@@ -25,12 +28,13 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       background-color: white;
     }
-    /* Exit button */
+
+    /* Exit button styles */
     #exitBtn {
       position: fixed;
       top: 15px;
       right: 15px;
-      z-index: 9999;
+      z-index: 10001; /* above spinner */
       background: #2c666e;
       border: none;
       color: #f0edee;
@@ -48,20 +52,59 @@
       opacity: 1;
       box-shadow: 0 6px 8px rgba(144, 221, 240, 0.6);
     }
+
+    /* Spinner overlay */
+    #spinner {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(240, 237, 238, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    /* Spinner animation */
+    .loader {
+      border: 8px solid #f0edee;
+      border-top: 8px solid #2c666e;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
 
   <button id="exitBtn" onclick="location.href='index.html'">Exit Chat</button>
 
+  <div id="spinner">
+    <div class="loader"></div>
+  </div>
+
   <div id="myLandbot"></div>
 
   <script SameSite="None; Secure" type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+
   <script type="module">
     var myLandbot = new Landbot.Container({
       container: '#myLandbot',
       configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3088981-EA5LGM60Q83R1WP6/index.json',
     });
+
+    myLandbot.on('load', function() {
+      const spinner = document.getElementById('spinner');
+      if (spinner) {
+        spinner.style.display = 'none';
+      }
+    });
   </script>
+
 </body>
 </html>
