@@ -6,17 +6,24 @@
   <title>Chat Bot</title>
   <style>
     html, body {
-      margin: 0; padding: 0; height: 100%;
-      overflow: hidden;
+      margin: 0; 
+      padding: 0; 
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0edee;
       font-family: 'Open Sans', sans-serif;
-      background: #f0edee; /* Light background */
-      color: #0a090c; /* Primary dark text */
+      overflow: hidden;
     }
     #myLandbot {
       width: 100vw;
-      height: 100vh;
-      background-color: #f0edee; /* same light background */
+      height: 80vh;
+      max-width: 600px;
       box-sizing: border-box;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      background-color: white;
     }
     /* Exit button */
     #exitBtn {
@@ -24,9 +31,9 @@
       top: 15px;
       right: 15px;
       z-index: 9999;
-      background: #2c666e; /* Medium teal */
+      background: #2c666e;
       border: none;
-      color: #f0edee; /* Light text */
+      color: #f0edee;
       padding: 10px 20px;
       font-size: 1rem;
       border-radius: 8px;
@@ -36,8 +43,8 @@
       box-shadow: 0 4px 6px rgba(44, 102, 110, 0.4);
     }
     #exitBtn:hover {
-      background-color: #90ddf0; /* Light teal */
-      color: #07393c; /* Dark teal */
+      background-color: #90ddf0;
+      color: #07393c;
       opacity: 1;
       box-shadow: 0 6px 8px rgba(144, 221, 240, 0.6);
     }
