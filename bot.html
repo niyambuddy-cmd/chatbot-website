@@ -9,29 +9,37 @@
       margin: 0; padding: 0; height: 100%;
       overflow: hidden;
       font-family: 'Open Sans', sans-serif;
+      background: #f0edee; /* Light background */
+      color: #0a090c; /* Primary dark text */
     }
     #myLandbot {
       width: 100vw;
       height: 100vh;
+      background-color: #f0edee; /* same light background */
+      box-sizing: border-box;
     }
-    /* Optional exit button */
+    /* Exit button */
     #exitBtn {
       position: fixed;
       top: 15px;
       right: 15px;
       z-index: 9999;
-      background: #4A90E2;
+      background: #2c666e; /* Medium teal */
       border: none;
-      color: white;
+      color: #f0edee; /* Light text */
       padding: 10px 20px;
       font-size: 1rem;
       border-radius: 8px;
       cursor: pointer;
       opacity: 0.85;
-      transition: opacity 0.3s ease;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      box-shadow: 0 4px 6px rgba(44, 102, 110, 0.4);
     }
     #exitBtn:hover {
+      background-color: #90ddf0; /* Light teal */
+      color: #07393c; /* Dark teal */
       opacity: 1;
+      box-shadow: 0 6px 8px rgba(144, 221, 240, 0.6);
     }
   </style>
 </head>
